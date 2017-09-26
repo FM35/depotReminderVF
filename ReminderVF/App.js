@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, ScrollView } from 'react-native';
 import Header from './components/header';
 import TaskList from './components/task-list';
 import ButtonAddTask from './components/button-add-task';
@@ -16,12 +16,62 @@ const taskList = [
     content: 'Aller voir Olivier',
     status: 'En cours'
   },
-  {
+   {
     id:2,
+    content: 'Aller voir Seb',
+    status: 'En cours'
+  },
+  {
+    id:3,
+    content: 'Aller voir Olivier',
+    status: 'En cours'
+  },
+   {
+    id:4,
+    content: 'Aller voir Seb',
+    status: 'En cours'
+  },
+  {
+    id:5,
+    content: 'Aller voir Olivier',
+    status: 'Terminé'
+  },
+  {
+    id:6,
+    content: 'Aller voir Olivier',
+    status: 'En cours'
+  },
+   {
+    id:7,
+    content: 'Aller voir Seb',
+    status: 'En cours'
+  },
+   {
+    id:8,
+    content: 'Aller voir Seb',
+    status: 'En cours'
+  },
+  {
+    id:9,
+    content: 'Aller voir Olivier',
+    status: 'En cours'
+  },
+  {
+    id:10,
+    content: 'Aller voir Olivier',
+    status: 'En cours'
+  },
+   {
+    id:11,
+    content: 'Aller voir Seb',
+    status: 'En cours'
+  },
+  {
+    id:12,
     content: 'Aller voir Ben',
     status: 'Terminé'
   }
-];
+  ];
 
 
 
@@ -33,9 +83,11 @@ export default class App extends React.Component {
     
     render() {
     return (
-      <View>
+      <View style={{flex: 1 }}>
         <Header content="Liste de taches" />
-        <TaskList taskList={this.state.taskList} />
+        <ScrollView>
+          <TaskList taskList={this.state.taskList} />
+        </ScrollView>
         <ButtonAddTask />
       </View>
     );
