@@ -1,35 +1,42 @@
 import React from 'react';
 import { View } from 'react-native';
-import { Button, Icon } from 'react-native-elements';
 import Header from './components/header';
+import TaskList from './components/task-list';
+
+
+const taskList = [
+  {
+    id:0,
+    content: 'Aller voir Seb',
+    status: 'En cours'
+  },
+  {
+    id:1,
+    content: 'Aller voir Olivier',
+    status: 'En cours'
+  },
+  {
+    id:2,
+    content: 'Aller voir Ben',
+    status: 'Terminé'
+  }
+];
 
 
 
 export default class App extends React.Component {
-  render() {
+  constructor(props) {
+    super(props);
+    this.state = { taskList };
+    }
+    
+    render() {
     return (
       <View>
-     
-      <Header content="Liste de taches" />
-      
-
-
-      <Button
-      title='BUTTON' />
-
-      
-
-
-      <Icon
-      name='sc-telegram'
-      type='evilicon'
-      color='#517fa4'
-      />
-
+        <Header content="Liste de taches" />
+        <TaskList taskList={this.state.taskList} />
       </View>
-
-     
-   
     );
   }
 }
+
