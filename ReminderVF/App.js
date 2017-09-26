@@ -80,13 +80,20 @@ export default class App extends React.Component {
     super(props);
     this.state = { taskList };
     }
+
+    displayMenuTask = taskContent => {
+      console.log('onPress', taskContent);
+    }
     
     render() {
     return (
       <View style={{flex: 1 }}>
         <Header content="Liste de taches" />
         <ScrollView>
-          <TaskList taskList={this.state.taskList} />
+          <TaskList 
+          onPressCallBack={this.displayMenuTask} 
+          taskList={this.state.taskList} 
+          />
         </ScrollView>
         <ButtonAddTask />
       </View>
