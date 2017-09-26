@@ -2,6 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import Header from './components/header';
 import TaskList from './components/task-list';
+import ButtonAddTask from './components/button-add-task';
 
 
 const taskList = [
@@ -35,6 +36,7 @@ export default class App extends React.Component {
       <View>
         <Header content="Liste de taches" />
         <TaskList taskList={this.state.taskList} />
+        <ButtonAddTask />
       </View>
     );
   }
